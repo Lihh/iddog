@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  LoginViewController.swift
 //  iddog
 //
 //  Created by Lidia Chou on 09/12/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginView: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,6 +18,7 @@ class LoginView: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
         loginViewModel.configureView(self)
     }
     
@@ -36,7 +37,7 @@ class LoginView: UIViewController {
 }
 
 // MARK: - TextField setup
-extension LoginView: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     
     func setTextFieldDelegate() {
         emailTextField.delegate = self
@@ -45,5 +46,13 @@ extension LoginView: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
+}
+
+// MARK: - Navigation settings
+extension LoginViewController {
+
+    func setNavigationBar() {
+        navigationItem.title = loginViewModel.navTitle
+    }
+
 }

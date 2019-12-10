@@ -10,19 +10,20 @@ import Foundation
 
 class LoginViewModel {
     
+    var navTitle: String {
+        return "IDDOG"
+    }
     var titleText: String {
         return "Welcome to iddog app!"
     }
-    
     var loginButtonText: String {
         return "LOGIN"
     }
-    
     var textFieldPlaceholder: String {
         return "Type a valid email here"
     }
     
-    func configureView(_ view: LoginView) {
+    func configureView(_ view: LoginViewController) {
         view.titleLabel.text = titleText
         
         view.emailTextField.placeholder = textFieldPlaceholder
@@ -31,7 +32,7 @@ class LoginViewModel {
     }
     
     // MARK: - email validation
-    func validateEmail(email: String?, view: LoginView) {
+    func validateEmail(email: String?, view: LoginViewController) {
         guard let email = email else {
             showInvalidEmailAlert(view)
             return
@@ -57,7 +58,7 @@ class LoginViewModel {
         return emailPred.evaluate(with: email)
     }
     
-    func showInvalidEmailAlert(_ view: LoginView) {
+    func showInvalidEmailAlert(_ view: LoginViewController) {
         let title = "Invalid Email"
         let message = "Please enter a valid email"
         let buttonTitle = "OK"
