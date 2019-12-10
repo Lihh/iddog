@@ -61,8 +61,6 @@ enum APIRouter: APIConfiguration {
         let url = try Constants.Urls.Iddog.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-//        urlRequest.setValue("application/json",
-//                            forHTTPHeaderField: "Content-Type")
         urlRequest.allHTTPHeaderFields = headers
         urlRequest.httpMethod = method.rawValue
         

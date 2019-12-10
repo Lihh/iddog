@@ -10,23 +10,10 @@ import Alamofire
 
 class APIClient {
     
-    static func login(email: String) {//, completion:@escaping (Result<User>)->Void) {
-//        performRequest(route: APIRouter.login(email: email), completion: completion).auth
+    static func login(email: String) {
         Alamofire.request(APIRouter.login(email: email)).validate()
             .responseJSON { response in
                 print(response)
         }
-            
-//            .response { (response) in
-//            print(response)
-//        }
-//        Alamofire.request(APIRouter.login(email: email),
-//                          encoder: JSONParameterEncoder.default).response { response in
-//            debugPrint(response)
-        
-//        var request = APIRouter.login(email: email)
-        
-        
-        }
     }
-//}
+}

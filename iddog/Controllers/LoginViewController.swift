@@ -44,7 +44,6 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: buttonTitle, style: .default))
         self.present(alert, animated: true, completion: nil)
     }
-
 }
 
 // MARK: - TextField setup
