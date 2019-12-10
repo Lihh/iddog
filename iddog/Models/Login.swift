@@ -6,9 +6,12 @@
 //  Copyright © 2019 Lidia Chou. All rights reserved.
 //
 
-import Foundation
+struct Login: Codable {
+    var user: User
+}
 
 struct User: Codable {
-    let email: String
-    let token: String
+    var _id: String
+    var email: String
+    var token: String
 }

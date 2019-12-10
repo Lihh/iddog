@@ -8,6 +8,11 @@
 
 struct Constants {
     
+    struct Keys {
+        static let token = "token"
+        static let email = "email"
+    }
+    
     struct Urls {
         static let Iddog = "https://api-iddog.idwall.co"
     }

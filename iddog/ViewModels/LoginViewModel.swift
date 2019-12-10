@@ -23,6 +23,7 @@ class LoginViewModel {
     var textFieldPlaceholder: String {
         return "Type a valid email here"
     }
+    var localStorage = LocalStorage()
     
     func configureView(_ view: LoginViewController) {
         view.titleLabel.text = titleText
@@ -40,7 +41,14 @@ class LoginViewModel {
         }
         
         if isEmailValid(email) {
-            APIClient.login(email: email) 
+            APIClient.login(email: email) { (login, error) in
+                if let login = login {
+                    self.localStorage.saveUserDefaultValue(login.user.token,
+                                                           key: Constants.Keys.token)
+                    self.localStorage.saveUserDefaultValue(login.user.email,
+                                                           key: Constants.Keys.email)
+                }
+            }
         } else {
             showInvalidEmailAlert(view)
         }
