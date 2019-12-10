@@ -12,4 +12,8 @@ struct Constants {
         static let Iddog = "https://api-iddog.idwall.co"
     }
     
+    struct Colors {
+        static let purple = 0x7430F5
+    }
+    
 }

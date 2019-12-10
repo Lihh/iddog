@@ -10,14 +10,15 @@ import Alamofire
 
 protocol APIConfiguration: URLRequestConvertible {
     var path: String { get }
-    var params: [String: Any] { get }
+    var params: Parameters? { get }
     var method: HTTPMethod { get }
+    var headers: HTTPHeaders { get }
 }
 
 enum APIRouter: APIConfiguration {
     
     case login(email: String)
-    case getDogBreeds
+    case getDogBreeds(token: String)
     
     var path: String {
         switch self {
@@ -28,12 +29,12 @@ enum APIRouter: APIConfiguration {
         }
     }
     
-    var params: [String: Any] {
+    var params: Parameters? {
         switch self {
         case .login(let email):
             return ["email" : email]
         default:
-            return [:]
+            return nil
         }
     }
     
@@ -46,12 +47,23 @@ enum APIRouter: APIConfiguration {
         }
     }
     
+    var headers: HTTPHeaders {
+        switch self {
+        case .login:
+            return ["Content-Type": "application/json"]
+        case .getDogBreeds(let token):
+            return ["Content-Type": "application/json",
+                    "Authorization": token]
+        }
+    }
+    
     func asURLRequest() throws -> URLRequest {
         let url = try Constants.Urls.Iddog.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        urlRequest.setValue("application/json",
-                            forHTTPHeaderField: "Content-Type")
+//        urlRequest.setValue("application/json",
+//                            forHTTPHeaderField: "Content-Type")
+        urlRequest.allHTTPHeaderFields = headers
         urlRequest.httpMethod = method.rawValue
         
         return try URLEncoding.default.encode(urlRequest, with: params)

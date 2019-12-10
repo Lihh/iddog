@@ -19,7 +19,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        setLayout()
         loginViewModel.configureView(self)
+    }
+    
+    func setLayout() {
+        emailTextField.layer.borderWidth = 0.5
+        emailTextField.layer.cornerRadius = 5
+        emailTextField.layer.borderColor = UIColor(hexColor: Constants.Colors.purple).cgColor
+        
+        loginButton.tintColor = .white
+        loginButton.backgroundColor = UIColor(hexColor: Constants.Colors.purple)
+        loginButton.layer.cornerRadius = 5
     }
     
     @IBAction func loginButton(_ sender: Any) {
@@ -52,7 +63,6 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
 
     func setNavigationBar() {
-        navigationItem.title = loginViewModel.navTitle
+        navigationController?.isNavigationBarHidden = true
     }
-
 }

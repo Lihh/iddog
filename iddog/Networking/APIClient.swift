@@ -9,12 +9,24 @@
 import Alamofire
 
 class APIClient {
-    @discardableResult
-    private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T>)->Void) -> DataRequest {
-        return Alamofire.request(route)
-    }
     
-    static func login(email: String, completion:@escaping (Result<User>)->Void) {
-        performRequest(route: APIRouter.login(email: email), completion: completion)
+    static func login(email: String) {//, completion:@escaping (Result<User>)->Void) {
+//        performRequest(route: APIRouter.login(email: email), completion: completion).auth
+        Alamofire.request(APIRouter.login(email: email)).validate()
+            .responseJSON { response in
+                print(response)
+        }
+            
+//            .response { (response) in
+//            print(response)
+//        }
+//        Alamofire.request(APIRouter.login(email: email),
+//                          encoder: JSONParameterEncoder.default).response { response in
+//            debugPrint(response)
+        
+//        var request = APIRouter.login(email: email)
+        
+        
+        }
     }
-}
+//}

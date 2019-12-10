@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class LoginViewModel {
     
@@ -25,7 +26,7 @@ class LoginViewModel {
     
     func configureView(_ view: LoginViewController) {
         view.titleLabel.text = titleText
-        
+
         view.emailTextField.placeholder = textFieldPlaceholder
         
         view.loginButton.titleLabel?.text = loginButtonText
@@ -39,14 +40,7 @@ class LoginViewModel {
         }
         
         if isEmailValid(email) {
-            APIClient.login(email: email) { result in
-                switch result {
-                case .success(let user):
-                    print("Login success: \(user)")
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
+            APIClient.login(email: email) 
         } else {
             showInvalidEmailAlert(view)
         }
