@@ -1,4 +1,4 @@
-# iddog
+# iddog App Challenge
 
 
 ## Project Specifications
@@ -6,13 +6,14 @@ This is an iOS app made in XCode 11.2.1 with Swift 5.
 
 The architecture in this code is based on MVVM, and the project classes are organized in the following folders:
 - Global Use 
-  - Global constants;
+  - Global constants
   - UserDefaults configuration
   - Helpers
 - Delegates
 - Controllers
 - ViewModels
 - Models
+- Views (it uses only XIB. The only storyboard is LaunchScreen)
 - Networking
   - API requests setup
 
