@@ -29,23 +29,23 @@ class FeedViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testNavigationTitleTextNotNull() {
+    func testNavigationTitleTextNotNill() {
         XCTAssertNotNil(sut.navTitle)
     }
     
-    func testDescriptionTextNotNull() {
+    func testDescriptionTextNotNill() {
         XCTAssertNotNil(sut.descriptionText)
     }
     
-    func testTextFieldEnabledPlaceholderNotNull() {
+    func testTextFieldEnabledPlaceholderNotNill() {
         XCTAssertNotNil(sut.textFieldEnabledPlaceholder)
     }
     
-    func testTextFieldDisabledPlaceholderNotNull() {
+    func testTextFieldDisabledPlaceholderNotNill() {
         XCTAssertNotNil(sut.textFieldDisabledPlaceholder)
     }
     
-    func testSearchButtonTextNotNull() {
+    func testSearchButtonTextNotNill() {
         XCTAssertNotNil(sut.searchButtonText)
     }
     

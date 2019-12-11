@@ -31,15 +31,15 @@ class LoginViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testTitleTextFieldNotNull() {
+    func testTitleTextFieldNotNill() {
         XCTAssertNotNil(sut.titleText)
     }
     
-    func testLoginButtonTextFieldNotNull() {
+    func testLoginButtonTextFieldNotNill() {
         XCTAssertNotNil(sut.loginButtonText)
     }
     
-    func testTextFieldPlaceholderNotNull() {
+    func testTextFieldPlaceholderNotNill() {
         XCTAssertNotNil(sut.textFieldPlaceholder)
     }
     
