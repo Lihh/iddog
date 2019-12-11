@@ -11,19 +11,16 @@ import XCTest
 
 class DogImageViewModelTests: XCTestCase {
     var sut: DogImageViewModel!
-    var dogImageController: DogImageViewController!
 
     override func setUp() {
         super.setUp()
         let imageUrl = URL(string: "https://images.dog.ceo/breeds/husky/n02110185_10047.jpg")!
         sut = DogImageViewModel(imageUrl: imageUrl,
                                 breed: "Husky")
-        dogImageController = DogImageViewController(dogImageViewModel: sut)
     }
 
     override func tearDown() {
         sut = nil
-        dogImageController = nil
         super.tearDown()
     }
     
