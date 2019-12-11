@@ -10,6 +10,7 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var imagesTableView: UITableView!

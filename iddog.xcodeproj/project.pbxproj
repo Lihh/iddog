@@ -113,14 +113,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0232EFA223A0576A00BFE760 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				0232EF9F23A0524100BFE760 /* LocalStorage.swift */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		0256ABDD239F00F50092FBEF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,8 +153,8 @@
 				02E65E0B239E10140084196F /* Models */,
 				02946BA3239E081400E3E247 /* Views */,
 				0256ABDD239F00F50092FBEF /* Networking */,
-				0232EFA223A0576A00BFE760 /* Storage */,
 				02946B79239E036600E3E247 /* Assets.xcassets */,
+				0232EF9F23A0524100BFE760 /* LocalStorage.swift */,
 				0256ABDB239EDD9E0092FBEF /* Constants.swift */,
 				02CCBC4D23A025B800385270 /* UIColor+Hex.swift */,
 				02946B7E239E036600E3E247 /* Info.plist */,
