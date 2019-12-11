@@ -28,7 +28,7 @@ class LoginViewModel {
         view.loginButton.setTitle(loginButtonText, for: .normal)
     }
     
-    // MARK: - email validation
+    // MARK: - Email validation
     func validateLogin(email: String, view: LoginViewController) {
         if isEmailValid(email) {
             APIClient.login(email: email) { (login, error) in

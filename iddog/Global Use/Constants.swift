@@ -6,7 +6,7 @@
 //  Copyright © 2019 Lidia Chou. All rights reserved.
 //
 
-struct Constants {
+public struct Constants {
     
     struct Keys {
         static let token = "token"

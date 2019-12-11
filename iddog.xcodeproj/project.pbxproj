@@ -117,6 +117,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0232EFBF23A0F93800BFE760 /* Global Use */ = {
+			isa = PBXGroup;
+			children = (
+				0256ABDB239EDD9E0092FBEF /* Constants.swift */,
+				0232EF9F23A0524100BFE760 /* LocalStorage.swift */,
+				02CCBC4D23A025B800385270 /* UIColor+Hex.swift */,
+			);
+			path = "Global Use";
+			sourceTree = "<group>";
+		};
 		0256ABDD239F00F50092FBEF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		02946B6F239E036500E3E247 /* iddog */ = {
 			isa = PBXGroup;
 			children = (
+				0232EFBF23A0F93800BFE760 /* Global Use */,
 				02946BA2239E080000E3E247 /* Delegates */,
 				02946BA4239E08B000E3E247 /* Controllers */,
 				02E65E0A239E10050084196F /* ViewModels */,
@@ -158,9 +169,6 @@
 				02946BA3239E081400E3E247 /* Views */,
 				0256ABDD239F00F50092FBEF /* Networking */,
 				02946B79239E036600E3E247 /* Assets.xcassets */,
-				0256ABDB239EDD9E0092FBEF /* Constants.swift */,
-				02CCBC4D23A025B800385270 /* UIColor+Hex.swift */,
-				0232EF9F23A0524100BFE760 /* LocalStorage.swift */,
 				02946B7E239E036600E3E247 /* Info.plist */,
 			);
 			path = iddog;

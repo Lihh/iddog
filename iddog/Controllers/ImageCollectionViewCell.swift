@@ -10,9 +10,10 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var dogImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

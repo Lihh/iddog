@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FeedViewController: UIViewController {
     
@@ -55,7 +56,7 @@ class FeedViewController: UIViewController {
     }
 }
 
-// MARK: - Table View
+// MARK: - CollectionView setup
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setDelegates() {
@@ -64,18 +65,26 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.register(UINib.init(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
     }
     
+    func updateCollectionView() {
+        collectionView.reloadData()
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return feedViewModel.getNumberOfSections()
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return feedViewModel.getNumberOfItens()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell",
                                                       for: indexPath) as! ImageCollectionViewCell
+        let imageURL = feedViewModel.getImageURL(index: indexPath.row)
+        let placeholderImage = UIImage(named: "PlaceholderPaw")
+        cell.dogImageView.sd_setImage(with: imageURL,
+                                      placeholderImage: placeholderImage)
         
         return cell
     }
