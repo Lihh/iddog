@@ -21,7 +21,6 @@
 		02946B73239E036500E3E247 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02946B72239E036500E3E247 /* SceneDelegate.swift */; };
 		02946B7A239E036600E3E247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02946B79239E036600E3E247 /* Assets.xcassets */; };
 		02946B7D239E036600E3E247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02946B7B239E036600E3E247 /* LaunchScreen.storyboard */; };
-		02946B88239E036600E3E247 /* iddogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02946B87239E036600E3E247 /* iddogTests.swift */; };
 		02946B93239E036600E3E247 /* iddogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02946B92239E036600E3E247 /* iddogUITests.swift */; };
 		02946BA1239E07D800E3E247 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02946BA0239E07D800E3E247 /* LoginViewController.swift */; };
 		02CCBC4C239FFB1000385270 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CCBC4B239FFB1000385270 /* LoginView.xib */; };
@@ -30,6 +29,7 @@
 		02D5776F23A1211A0089C485 /* DogImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5776D23A1211A0089C485 /* DogImageViewController.swift */; };
 		02D5777023A1211A0089C485 /* DogImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D5776E23A1211A0089C485 /* DogImageViewController.xib */; };
 		02D5777223A1296A0089C485 /* DogImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5777123A1296A0089C485 /* DogImageViewModel.swift */; };
+		02D5777C23A1902C0089C485 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5777B23A1902C0089C485 /* LoginViewModelTests.swift */; };
 		02E65E09239E0A9B0084196F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E65E08239E0A9B0084196F /* LoginViewModel.swift */; };
 		6B00F5050E1924FEE387B6B9 /* Pods_iddog_iddogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6347368723DF390EA08F7210 /* Pods_iddog_iddogUITests.framework */; };
 		95D846C033C05FCF1A5A9E06 /* Pods_iddog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A58F4AFEB42DB51ACEE5BB /* Pods_iddog.framework */; };
@@ -71,7 +71,6 @@
 		02946B7C239E036600E3E247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02946B7E239E036600E3E247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02946B83239E036600E3E247 /* iddogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iddogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02946B87239E036600E3E247 /* iddogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iddogTests.swift; sourceTree = "<group>"; };
 		02946B89239E036600E3E247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02946B8E239E036600E3E247 /* iddogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iddogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02946B92239E036600E3E247 /* iddogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iddogUITests.swift; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		02D5776D23A1211A0089C485 /* DogImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImageViewController.swift; sourceTree = "<group>"; };
 		02D5776E23A1211A0089C485 /* DogImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogImageViewController.xib; sourceTree = "<group>"; };
 		02D5777123A1296A0089C485 /* DogImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImageViewModel.swift; sourceTree = "<group>"; };
+		02D5777B23A1902C0089C485 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		02E65E08239E0A9B0084196F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		15C13CFBB03E78AACB9DAE36 /* Pods-iddog-iddogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iddog-iddogUITests.debug.xcconfig"; path = "Target Support Files/Pods-iddog-iddogUITests/Pods-iddog-iddogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		27A58F4AFEB42DB51ACEE5BB /* Pods_iddog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iddog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,7 +183,7 @@
 		02946B86239E036600E3E247 /* iddogTests */ = {
 			isa = PBXGroup;
 			children = (
-				02946B87239E036600E3E247 /* iddogTests.swift */,
+				02D5777B23A1902C0089C485 /* LoginViewModelTests.swift */,
 				02946B89239E036600E3E247 /* Info.plist */,
 			);
 			path = iddogTests;
@@ -538,7 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02946B88239E036600E3E247 /* iddogTests.swift in Sources */,
+				02D5777C23A1902C0089C485 /* LoginViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
