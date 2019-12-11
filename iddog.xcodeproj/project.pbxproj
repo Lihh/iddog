@@ -12,6 +12,8 @@
 		0232EFB123A0CECF00BFE760 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232EFAF23A0CECF00BFE760 /* FeedViewController.swift */; };
 		0232EFB223A0CECF00BFE760 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0232EFB023A0CECF00BFE760 /* FeedViewController.xib */; };
 		0232EFB423A0D64100BFE760 /* DogBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232EFB323A0D64100BFE760 /* DogBreed.swift */; };
+		0232EFBC23A0F50C00BFE760 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232EFBA23A0F50C00BFE760 /* ImageCollectionViewCell.swift */; };
+		0232EFBD23A0F50C00BFE760 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0232EFBB23A0F50C00BFE760 /* ImageCollectionViewCell.xib */; };
 		0256ABDC239EDD9E0092FBEF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256ABDB239EDD9E0092FBEF /* Constants.swift */; };
 		0256ABDF239F02EB0092FBEF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256ABDE239F02EB0092FBEF /* APIClient.swift */; };
 		0256ABE3239F21F20092FBEF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256ABE2239F21F20092FBEF /* Login.swift */; };
@@ -54,6 +56,8 @@
 		0232EFAF23A0CECF00BFE760 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0232EFB023A0CECF00BFE760 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		0232EFB323A0D64100BFE760 /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
+		0232EFBA23A0F50C00BFE760 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		0232EFBB23A0F50C00BFE760 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		0256ABDB239EDD9E0092FBEF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0256ABDE239F02EB0092FBEF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0256ABE2239F21F20092FBEF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -154,9 +158,9 @@
 				02946BA3239E081400E3E247 /* Views */,
 				0256ABDD239F00F50092FBEF /* Networking */,
 				02946B79239E036600E3E247 /* Assets.xcassets */,
-				0232EF9F23A0524100BFE760 /* LocalStorage.swift */,
 				0256ABDB239EDD9E0092FBEF /* Constants.swift */,
 				02CCBC4D23A025B800385270 /* UIColor+Hex.swift */,
+				0232EF9F23A0524100BFE760 /* LocalStorage.swift */,
 				02946B7E239E036600E3E247 /* Info.plist */,
 			);
 			path = iddog;
@@ -196,6 +200,7 @@
 				02946B7B239E036600E3E247 /* LaunchScreen.storyboard */,
 				02CCBC4B239FFB1000385270 /* LoginView.xib */,
 				0232EFB023A0CECF00BFE760 /* FeedViewController.xib */,
+				0232EFBB23A0F50C00BFE760 /* ImageCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			children = (
 				02946BA0239E07D800E3E247 /* LoginViewController.swift */,
 				0232EFAF23A0CECF00BFE760 /* FeedViewController.swift */,
+				0232EFBA23A0F50C00BFE760 /* ImageCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				02946B7A239E036600E3E247 /* Assets.xcassets in Resources */,
 				0232EFB223A0CECF00BFE760 /* FeedViewController.xib in Resources */,
 				02CCBC4C239FFB1000385270 /* LoginView.xib in Resources */,
+				0232EFBD23A0F50C00BFE760 /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +507,7 @@
 				0256ABE3239F21F20092FBEF /* Login.swift in Sources */,
 				02946B73239E036500E3E247 /* SceneDelegate.swift in Sources */,
 				0256ABDC239EDD9E0092FBEF /* Constants.swift in Sources */,
+				0232EFBC23A0F50C00BFE760 /* ImageCollectionViewCell.swift in Sources */,
 				0232EFB123A0CECF00BFE760 /* FeedViewController.swift in Sources */,
 				02CCBC4E23A025B800385270 /* UIColor+Hex.swift in Sources */,
 				0232EFB423A0D64100BFE760 /* DogBreed.swift in Sources */,

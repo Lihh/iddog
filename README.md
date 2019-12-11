@@ -6,3 +6,4 @@ The architecture in this code is based on MVVM
 
 It uses CocoaPods such as:
 - Alamofire for networking requests
+- SDWebImage to cache images

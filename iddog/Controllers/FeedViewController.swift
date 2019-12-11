@@ -9,11 +9,11 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var imagesTableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var feedViewModel = FeedViewModel()
     
@@ -22,6 +22,7 @@ class FeedViewController: UIViewController {
         setNavigationBar()
         feedViewModel.configureView(self)
         setLayout()
+        setDelegates()
     }
     
     func setLayout() {
@@ -55,23 +56,28 @@ class FeedViewController: UIViewController {
 }
 
 // MARK: - Table View
-extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
+extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setDelegates() {
-        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib.init(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "") as! UITableViewCell
-        return cell
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //code
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell",
+                                                      for: indexPath) as! ImageCollectionViewCell
+        
+        return cell
     }
 }
 
@@ -89,7 +95,7 @@ extension FeedViewController: UITextFieldDelegate {
 
 // MARK: - Navigation settings
 extension FeedViewController {
-
+    
     func setNavigationBar() {
         navigationController?.isNavigationBarHidden = false
     }
