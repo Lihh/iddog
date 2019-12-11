@@ -63,7 +63,7 @@ class LoginViewModel {
     }
 }
 
-// MARK: - Navigation
+// MARK: - Navigation setup
 extension LoginViewModel {
     
     func goToFeedView(_ view: LoginViewController) {

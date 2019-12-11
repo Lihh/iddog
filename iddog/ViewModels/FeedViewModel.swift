@@ -15,10 +15,13 @@ class FeedViewModel {
         return "Dog Breeds"
     }
     var descriptionText: String {
-        return "Want to see some dog pictures? \n Search for a dog breed in the field below"
+        return "Search for a dog breed in the field below or select one option above to see pictures :)"
     }
-    var textFieldPlaceholder: String {
+    var textFieldEnabledPlaceholder: String {
         return "Type a dog breed (i.e: husky, labrador, pug, hound)"
+    }
+    var textFieldDisabledPlaceholder: String {
+        return "Only available for custom search"
     }
     var searchButtonText: String {
         return "Search"
@@ -29,8 +32,16 @@ class FeedViewModel {
     func configureView(_ view: FeedViewController) {
         view.navigationItem.title = navTitle
         view.descriptionLabel.text = descriptionText
-        view.searchTextField.placeholder = textFieldPlaceholder
+        view.searchTextField.placeholder = textFieldEnabledPlaceholder
         view.searchButton.setTitle(searchButtonText, for: .normal)
+    }
+    
+    func setTextFieldPlaceholder(_ view: FeedViewController, isEnabled: Bool) {
+        if isEnabled {
+            view.searchTextField.placeholder = textFieldEnabledPlaceholder
+        } else {
+            view.searchTextField.placeholder = textFieldDisabledPlaceholder
+        }
     }
     
     func searchDogBreed(_ dogBreed: String, view: FeedViewController) {
@@ -61,11 +72,10 @@ class FeedViewModel {
         dogBreedName = ""
         dogImagesUrl = []
         view.updateCollectionView()
-        
     }
 }
 
-// MARK: - Set collection view
+// MARK: - Collection view setup
 extension FeedViewModel {
     
     func getNumberOfSections() -> Int{
@@ -81,7 +91,7 @@ extension FeedViewModel {
     }
 }
 
-// MARK: - Navigation
+// MARK: - Navigation setup
 extension FeedViewModel {
     
     func goToDogImageView(_ view: FeedViewController, index: Int) {

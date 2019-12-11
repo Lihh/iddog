@@ -59,7 +59,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - Navigation settings
+// MARK: - Navigation setup
 extension LoginViewController {
 
     func setNavigationBar() {

@@ -38,10 +38,11 @@ class DogImageViewController: UIViewController {
     }
 }
 
-// MARK: - Navigation settings
+// MARK: - Navigation setup
 extension DogImageViewController {
     
     func setNavigationBar() {
         navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = UIColor(hexColor: Constants.Colors.purple)
     }
 }

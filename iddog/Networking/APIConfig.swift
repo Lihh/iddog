@@ -21,5 +21,4 @@ struct APIConfig {
         static let method: HTTPMethod = .get
         static let headers: HTTPHeaders = ["Content-Type": "application/json"]
     }
-    
 }

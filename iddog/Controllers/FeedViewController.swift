@@ -11,6 +11,7 @@ import SDWebImage
 
 class FeedViewController: UIViewController {
     
+    @IBOutlet weak var dogsSegmentedControl: UISegmentedControl!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
@@ -34,6 +35,26 @@ class FeedViewController: UIViewController {
         searchButton.tintColor = .white
         searchButton.backgroundColor = UIColor(hexColor: Constants.Colors.purple)
         searchButton.layer.cornerRadius = 5
+    }
+    
+    func setSearchFeature(isEnabled: Bool) {
+        searchTextField.isEnabled = isEnabled
+        searchButton.isEnabled = isEnabled
+        feedViewModel.setTextFieldPlaceholder(self, isEnabled: isEnabled)
+    }
+    
+    @IBAction func dogsSegmentedControl(_ sender: Any) {
+        let selectedSegment = dogsSegmentedControl.selectedSegmentIndex
+        switch selectedSegment {
+        case 0:
+            setSearchFeature(isEnabled: true)
+            feedViewModel.resetSearch(view: self)
+        default:
+            setSearchFeature(isEnabled: false)
+            if let segmentTitle = dogsSegmentedControl.titleForSegment(at: selectedSegment) {
+                feedViewModel.searchDogBreed(segmentTitle, view: self)
+            }
+        }
     }
     
     @IBAction func searchButton(_ sender: Any) {
@@ -106,11 +127,12 @@ extension FeedViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - Navigation settings
+// MARK: - Navigation setup
 extension FeedViewController {
     
     func setNavigationBar() {
         navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = UIColor(hexColor: Constants.Colors.purple)
     }
     
     func goToDogImageView(_ view: DogImageViewController) {
