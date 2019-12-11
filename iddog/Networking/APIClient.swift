@@ -23,8 +23,10 @@ class APIClient {
                 guard let data = response.data else { return }
                 do {
                     let decoder = JSONDecoder()
-                    let user = try! decoder.decode(Login.self, from: data)
+                    let user = try decoder.decode(Login.self, from: data)
                     return completion(user, nil)
+                } catch {
+                    return completion(nil, error)
                 }
         }
     }
@@ -45,8 +47,10 @@ class APIClient {
                 guard let data = response.data else { return }
                 do {
                     let decoder = JSONDecoder()
-                    let dogBreed = try! decoder.decode(DogBreed.self, from: data)
+                    let dogBreed = try decoder.decode(DogBreed.self, from: data)
                     return completion(dogBreed, nil)
+                } catch {
+                    return completion(nil, error)
                 }
         }
     }

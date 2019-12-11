@@ -21,4 +21,15 @@ struct Constants {
         static let purple = 0x7430F5
     }
     
+    struct ErrorAlerts {
+        static let titleError = "Error"
+        static let titleSorry = "Sorry"
+        static let titleInvalidEmail = "Invalid Email"
+        
+        static let messageInvalidEmail = "Please enter a valid email"
+        static let messageEmptyTextField = "You need to write a dog breed to search"
+        static let messageDogBreedNotFound = "We didn't find any pictures related to this dog breed"
+        
+        static let okButton = "Ok"
+    }
 }

@@ -25,20 +25,20 @@ class FeedViewModel {
     
     func configureView(_ view: FeedViewController) {
         view.navigationItem.title = navTitle
-        
         view.descriptionLabel.text = descriptionText
-        
         view.searchTextField.placeholder = textFieldPlaceholder
-        
         view.searchButton.setTitle(searchButtonText, for: .normal)
     }
     
-    func searchDogBreed(_ dogBreed: String?) {
-        guard let dogBreed = dogBreed else { return }
+    func searchDogBreed(_ dogBreed: String, view: FeedViewController) {
         guard let token = LocalStorage().getUserDefaultValue(key: Constants.Keys.token) else { return }
         APIClient.getFeed(token: token as! String, dogBreed: dogBreed.lowercased()) { (dogBreed, error) in
             if let dogBreed = dogBreed {
                 print(dogBreed)
+            } else {
+                view.showErrorAlert(title: Constants.ErrorAlerts.titleSorry,
+                                    message: Constants.ErrorAlerts.messageDogBreedNotFound,
+                                    buttonTitle: Constants.ErrorAlerts.okButton)
             }
         }
     }

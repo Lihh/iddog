@@ -24,9 +24,7 @@ class LoginViewModel {
     
     func configureView(_ view: LoginViewController) {
         view.titleLabel.text = titleText
-
         view.emailTextField.placeholder = textFieldPlaceholder
-        
         view.loginButton.setTitle(loginButtonText, for: .normal)
     }
     
@@ -51,12 +49,9 @@ class LoginViewModel {
     }
     
     func showInvalidEmailAlert(_ view: LoginViewController) {
-        let title = "Invalid Email"
-        let message = "Please enter a valid email"
-        let buttonTitle = "OK"
-        view.showInvalidEmailAlert(title: title,
-                                   message: message,
-                                   buttonTitle: buttonTitle)
+        view.showInvalidEmailAlert(title: Constants.ErrorAlerts.titleInvalidEmail,
+                                   message: Constants.ErrorAlerts.messageInvalidEmail,
+                                   buttonTitle: Constants.ErrorAlerts.okButton)
     }
     
     // MARK: - Save token and email locally

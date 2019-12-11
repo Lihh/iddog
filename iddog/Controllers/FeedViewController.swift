@@ -35,7 +35,22 @@ class FeedViewController: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        feedViewModel.searchDogBreed(searchTextField.text)
+        if let dogBreed = searchTextField.text, dogBreed != "" {
+            feedViewModel.searchDogBreed(dogBreed, view: self)
+        } else {
+            showErrorAlert(title: Constants.ErrorAlerts.titleError,
+                           message: Constants.ErrorAlerts.messageEmptyTextField,
+                           buttonTitle: Constants.ErrorAlerts.okButton)
+        }
+        
+    }
+    
+    func showErrorAlert(title: String, message: String, buttonTitle: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
