@@ -88,6 +88,10 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        feedViewModel.goToDogImageView(self, index: indexPath.row)
+    }
 }
 
 // MARK: - TextField setup
@@ -107,5 +111,9 @@ extension FeedViewController {
     
     func setNavigationBar() {
         navigationController?.isNavigationBarHidden = false
+    }
+    
+    func goToDogImageView(_ view: DogImageViewController) {
+        self.navigationController?.pushViewController(view, animated: true)
     }
 }

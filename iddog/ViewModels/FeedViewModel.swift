@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FeedViewModel {
     
@@ -23,6 +24,7 @@ class FeedViewModel {
         return "Search"
     }
     var dogImagesUrl = [URL]()
+    var dogBreedName = ""
     
     func configureView(_ view: FeedViewController) {
         view.navigationItem.title = navTitle
@@ -34,9 +36,10 @@ class FeedViewModel {
     func searchDogBreed(_ dogBreed: String, view: FeedViewController) {
         guard let token = LocalStorage().getUserDefaultValue(key: Constants.Keys.token) else { return }
         resetSearch(view: view)
-        APIClient.getFeed(token: token as! String, dogBreed: dogBreed.lowercased()) { (dogBreed, error) in
-            if let dogBreed = dogBreed {
-                self.getImagesUrlFromList(dogBreed.list)
+        APIClient.getFeed(token: token as! String, dogBreed: dogBreed.lowercased()) { (dogBreedObject, error) in
+            if let dogBreedObject = dogBreedObject {
+                self.dogBreedName = dogBreed
+                self.getImagesUrlFromList(dogBreedObject.list)
                 view.updateCollectionView()
             } else {
                 view.showErrorAlert(title: Constants.ErrorAlerts.titleSorry,
@@ -55,6 +58,7 @@ class FeedViewModel {
     }
     
     func resetSearch(view: FeedViewController) {
+        dogBreedName = ""
         dogImagesUrl = []
         view.updateCollectionView()
         
@@ -74,5 +78,16 @@ extension FeedViewModel {
     
     func getImageURL(index: Int) -> URL {
         return dogImagesUrl[index]
+    }
+}
+
+// MARK: - Navigation
+extension FeedViewModel {
+    
+    func goToDogImageView(_ view: FeedViewController, index: Int) {
+        let imageUrl = dogImagesUrl[index]
+        let vc = DogImageViewController(dogImageViewModel: DogImageViewModel(imageUrl: imageUrl, breed: dogBreedName))
+        
+        view.goToDogImageView(vc)
     }
 }
