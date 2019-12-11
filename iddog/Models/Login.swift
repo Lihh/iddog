@@ -7,11 +7,11 @@
 //
 
 struct Login: Codable {
-    var user: User
+    let user: User
 }
 
 struct User: Codable {
-    var _id: String
-    var email: String
-    var token: String
+    let _id: String
+    let email: String
+    let token: String
 }

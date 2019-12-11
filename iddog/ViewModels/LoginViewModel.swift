@@ -11,42 +11,32 @@ import UIKit
 
 class LoginViewModel {
     
-    var navTitle: String {
-        return "IDDOG"
-    }
     var titleText: String {
         return "Welcome to iddog app!"
     }
     var loginButtonText: String {
-        return "LOGIN"
+        return "Login"
     }
     var textFieldPlaceholder: String {
         return "Type a valid email here"
     }
-    var localStorage = LocalStorage()
+    let localStorage = LocalStorage()
     
     func configureView(_ view: LoginViewController) {
         view.titleLabel.text = titleText
 
         view.emailTextField.placeholder = textFieldPlaceholder
         
-        view.loginButton.titleLabel?.text = loginButtonText
+        view.loginButton.setTitle(loginButtonText, for: .normal)
     }
     
     // MARK: - email validation
-    func validateEmail(email: String?, view: LoginViewController) {
-        guard let email = email else {
-            showInvalidEmailAlert(view)
-            return
-        }
-        
+    func validateLogin(email: String, view: LoginViewController) {
         if isEmailValid(email) {
             APIClient.login(email: email) { (login, error) in
                 if let login = login {
-                    self.localStorage.saveUserDefaultValue(login.user.token,
-                                                           key: Constants.Keys.token)
-                    self.localStorage.saveUserDefaultValue(login.user.email,
-                                                           key: Constants.Keys.email)
+                    self.saveUserLocally(login: login)
+                    self.goToFeedView(view)
                 }
             }
         } else {
@@ -69,4 +59,20 @@ class LoginViewModel {
                                    buttonTitle: buttonTitle)
     }
     
+    // MARK: - Save token and email locally
+    func saveUserLocally(login: Login) {
+        localStorage.saveUserDefaultValue(login.user.token,
+                                          key: Constants.Keys.token)
+        localStorage.saveUserDefaultValue(login.user.email,
+                                          key: Constants.Keys.email)
+    }
+}
+
+// MARK: - Navigation
+extension LoginViewModel {
+    
+    func goToFeedView(_ view: LoginViewController) {
+        let vc = FeedViewController(nibName: "FeedViewController", bundle: nil)
+        view.goToFeedView(vc)
+    }
 }

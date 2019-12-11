@@ -34,7 +34,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        loginViewModel.validateEmail(email: emailTextField.text, view: self)
+        loginViewModel.validateLogin(email: emailTextField.text ?? "",
+                                     view: self)
     }
     
     func showInvalidEmailAlert(title: String, message: String, buttonTitle: String) {
@@ -63,5 +64,9 @@ extension LoginViewController {
 
     func setNavigationBar() {
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    func goToFeedView(_ view: FeedViewController) {
+        self.navigationController?.pushViewController(view, animated: true)
     }
 }
