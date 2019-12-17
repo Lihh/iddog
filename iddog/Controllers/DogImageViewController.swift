@@ -26,8 +26,8 @@ class DogImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dogImageViewModel.configureView(self)
         setDogImage()
+        dogImageViewModel.configureView(self)
     }
     
     func setDogImage() {

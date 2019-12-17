@@ -26,6 +26,8 @@ class LoginViewModel {
         view.titleLabel.text = titleText
         view.emailTextField.placeholder = textFieldPlaceholder
         view.loginButton.setTitle(loginButtonText, for: .normal)
+        
+        setAccessibility(view)
     }
     
     // MARK: - Email validation
@@ -60,6 +62,21 @@ class LoginViewModel {
                                           key: Constants.Keys.token)
         localStorage.saveUserDefaultValue(login.user.email,
                                           key: Constants.Keys.email)
+    }
+}
+
+// MARK: - Accessibility
+extension LoginViewModel {
+    
+    func setAccessibility(_ view: LoginViewController) {
+        view.titleLabel.accessibilityLabel = titleText
+        view.titleLabel.accessibilityTraits = Accessibility.Traits.staticText
+        
+        view.emailTextField.accessibilityLabel = Accessibility.Labels.emailTextField
+        view.emailTextField.accessibilityHint = textFieldPlaceholder
+        
+        view.loginButton.accessibilityLabel = loginButtonText
+        view.loginButton.accessibilityTraits = Accessibility.Traits.button
     }
 }
 

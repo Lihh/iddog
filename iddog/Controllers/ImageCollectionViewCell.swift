@@ -12,6 +12,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var dogImageView: UIImageView!
     
+    var imageCollectionCellViewModel = ImageCollectionCellViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

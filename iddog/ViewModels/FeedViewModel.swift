@@ -34,6 +34,8 @@ class FeedViewModel {
         view.descriptionLabel.text = descriptionText
         view.searchTextField.placeholder = textFieldEnabledPlaceholder
         view.searchButton.setTitle(searchButtonText, for: .normal)
+        
+        setAccessibility(view)
     }
     
     func setTextFieldPlaceholder(_ view: FeedViewController, isEnabled: Bool) {
@@ -42,6 +44,8 @@ class FeedViewModel {
         } else {
             view.searchTextField.placeholder = textFieldDisabledPlaceholder
         }
+        
+        setAccessibilitySearchEnabled(view, isEnabled)
     }
     
     func searchDogBreed(_ dogBreed: String, view: FeedViewController) {
@@ -75,6 +79,32 @@ class FeedViewModel {
     }
 }
 
+// MARK: - Accessibility
+extension FeedViewModel {
+    
+    func setAccessibility(_ view: FeedViewController) {
+        view.navigationItem.accessibilityLabel = navTitle
+        view.navigationItem.accessibilityTraits = Accessibility.Traits.header
+        view.navigationItem.leftBarButtonItem?.accessibilityLabel = Accessibility.Labels.back
+        
+        view.descriptionLabel.accessibilityLabel = descriptionText
+        view.descriptionLabel.accessibilityTraits = Accessibility.Traits.staticText
+        
+        view.searchTextField.accessibilityTraits = Accessibility.Traits.searchField
+        view.searchTextField.accessibilityHint = textFieldEnabledPlaceholder
+        
+        view.searchButton.accessibilityLabel = searchButtonText
+        view.searchButton.accessibilityTraits = Accessibility.Traits.button
+        
+        view.collectionView.accessibilityLabel = Accessibility.Labels.dogImagesCollection
+    }
+    
+    func setAccessibilitySearchEnabled(_ view: FeedViewController, _ isEnabled: Bool) {
+        view.searchTextField.isAccessibilityElement = isEnabled
+        view.searchButton.isAccessibilityElement = isEnabled
+    }
+}
+
 // MARK: - Collection view setup
 extension FeedViewModel {
     
@@ -96,7 +126,8 @@ extension FeedViewModel {
     
     func goToDogImageView(_ view: FeedViewController, index: Int) {
         let imageUrl = dogImagesUrl[index]
-        let vc = DogImageViewController(dogImageViewModel: DogImageViewModel(imageUrl: imageUrl, breed: dogBreedName))
+        let vc = DogImageViewController(dogImageViewModel: DogImageViewModel(imageUrl: imageUrl,
+                                                                             breed: dogBreedName))
         
         view.goToDogImageView(vc)
     }

@@ -23,6 +23,8 @@
 		02946B7D239E036600E3E247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02946B7B239E036600E3E247 /* LaunchScreen.storyboard */; };
 		02946B93239E036600E3E247 /* iddogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02946B92239E036600E3E247 /* iddogUITests.swift */; };
 		02946BA1239E07D800E3E247 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02946BA0239E07D800E3E247 /* LoginViewController.swift */; };
+		0297F5BD23A866CC0063C288 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297F5BC23A866CC0063C288 /* Accessibility.swift */; };
+		0297F5BF23A8A0360063C288 /* ImageCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297F5BE23A8A0360063C288 /* ImageCollectionCellViewModel.swift */; };
 		02CCBC4C239FFB1000385270 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CCBC4B239FFB1000385270 /* LoginView.xib */; };
 		02CCBC4E23A025B800385270 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CCBC4D23A025B800385270 /* UIColor+Hex.swift */; };
 		02CCBC5023A03AC000385270 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CCBC4F23A03AC000385270 /* APIConfig.swift */; };
@@ -78,6 +80,8 @@
 		02946B92239E036600E3E247 /* iddogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iddogUITests.swift; sourceTree = "<group>"; };
 		02946B94239E036600E3E247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02946BA0239E07D800E3E247 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0297F5BC23A866CC0063C288 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
+		0297F5BE23A8A0360063C288 /* ImageCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		02CCBC4B239FFB1000385270 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		02CCBC4D23A025B800385270 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		02CCBC4F23A03AC000385270 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				0256ABDB239EDD9E0092FBEF /* Constants.swift */,
 				0232EF9F23A0524100BFE760 /* LocalStorage.swift */,
 				02CCBC4D23A025B800385270 /* UIColor+Hex.swift */,
+				0297F5BC23A866CC0063C288 /* Accessibility.swift */,
 			);
 			path = "Global Use";
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			children = (
 				02E65E08239E0A9B0084196F /* LoginViewModel.swift */,
 				0232EFA723A05ACC00BFE760 /* FeedViewModel.swift */,
+				0297F5BE23A8A0360063C288 /* ImageCollectionCellViewModel.swift */,
 				02D5777123A1296A0089C485 /* DogImageViewModel.swift */,
 			);
 			path = ViewModels;
@@ -531,9 +537,11 @@
 				02CCBC5023A03AC000385270 /* APIConfig.swift in Sources */,
 				0256ABE3239F21F20092FBEF /* Login.swift in Sources */,
 				02946B73239E036500E3E247 /* SceneDelegate.swift in Sources */,
+				0297F5BD23A866CC0063C288 /* Accessibility.swift in Sources */,
 				0256ABDC239EDD9E0092FBEF /* Constants.swift in Sources */,
 				02D5777223A1296A0089C485 /* DogImageViewModel.swift in Sources */,
 				0232EFBC23A0F50C00BFE760 /* ImageCollectionViewCell.swift in Sources */,
+				0297F5BF23A8A0360063C288 /* ImageCollectionCellViewModel.swift in Sources */,
 				0232EFB123A0CECF00BFE760 /* FeedViewController.swift in Sources */,
 				02CCBC4E23A025B800385270 /* UIColor+Hex.swift in Sources */,
 				0232EFB423A0D64100BFE760 /* DogBreed.swift in Sources */,

@@ -18,6 +18,7 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var feedViewModel = FeedViewModel()
+    var imageCollectionCellViewModel = ImageCollectionCellViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +107,8 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let placeholderImage = UIImage(named: "PlaceholderPaw")
         cell.dogImageView.sd_setImage(with: imageURL,
                                       placeholderImage: placeholderImage)
+        
+        imageCollectionCellViewModel.setAccessibility(cell, dogBreed: feedViewModel.dogBreedName)
         
         return cell
     }
